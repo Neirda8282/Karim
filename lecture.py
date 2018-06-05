@@ -17,10 +17,12 @@ print("Taille du fichier (en octets) :",TailleData + 44)
 print("Nombre d'octets de données :",TailleData)
 
 
-Monson.setpos(echDebut)
+Monson.setpos(0)
 T=[]
-for i in range(0,Monson.getnframes):
-    T.append((Monson.tell(),'\t\t',binascii.hexlify(Monson.readframes(1))))
+R=[]
+for i in range(0,Monson.getnframes()):
+    R.append(Monson.tell())
+    T.append(binascii.hexlify(Monson.readframes(1)))
 
 Monson.close()
 print(T)

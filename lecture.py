@@ -22,7 +22,8 @@ T=[]
 R=[]
 for i in range(0,Monson.getnframes()):
     R.append(Monson.tell())
-    T.append(binascii.hexlify(Monson.readframes(1)))
+    T.append(Monson.readframes(1))
 
 Monson.close()
 print(T)
+
